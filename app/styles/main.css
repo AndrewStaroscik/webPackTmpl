@@ -4,6 +4,7 @@ body {
 
 #container {
   display: flex;
-  width: 1200px;
+  width: 500px;
   justify-content: center;
+  
 }

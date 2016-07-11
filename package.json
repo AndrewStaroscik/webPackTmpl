@@ -18,6 +18,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "postcss-loader": "^0.9.1",
+    "purifycss-webpack-plugin": "^2.0.3",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.1",
