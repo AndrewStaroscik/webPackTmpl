@@ -1,3 +1,9 @@
 body {
   background: cornsilk;
 }
+
+#container {
+  display: flex;
+  width: 1200px;
+  justify-content: center;
+}

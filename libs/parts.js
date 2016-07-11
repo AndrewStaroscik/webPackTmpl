@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const autoprefixer = require('autoprefixer');
+
 exports.devServer = function(options) {
   return {
     devServer: {
@@ -39,6 +41,7 @@ exports.devServer = function(options) {
   };
 }
 
+// css for development 
 exports.setupCSS = function(paths) {
   return {
     module: {
@@ -109,6 +112,8 @@ exports.clean = function(path) {
   };
 }
 
+
+// css for production
 exports.extractCSS = function(paths) {
   return {
     module: {
@@ -116,11 +121,12 @@ exports.extractCSS = function(paths) {
         // Extract CSS during build
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css'),
+          loader: ExtractTextPlugin.extract('style', 'css!postcss-loader'),
           include: paths
         }
       ]
     },
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
       // Output extracted CSS to a file
       new ExtractTextPlugin('[name].[chunkhash].css')
