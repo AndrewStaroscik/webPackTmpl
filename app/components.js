@@ -1,8 +1,20 @@
-module.exports = function() {
-  var element = document.createElement('div');
+import React from 'react';
 
-  element.innerHTML = '<div id="container"><div class="innerblock">block1</div><div class="innerblock">block2</div><div class="innerblock">block3</div></div>';
+class ExampleDiv extends React.Component {
 
-  return element;
+  render () {
+    return (
+        <div id='container'>
+          <div className="innerblock">First</div>
+          <div className="innerblock">Second</div>
+          <div className="innerblock">Three</div>
+        </div>
+      )
+
+  }
+
 };
+
+export default ExampleDiv;
+
 

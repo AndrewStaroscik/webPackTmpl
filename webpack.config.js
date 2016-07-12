@@ -23,9 +23,11 @@ const common = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack demo'
+      title: 'Webpack demo',
+       template: './libs/myIndex.ejs',
     })
   ]
+  
 };
 
 var config;
@@ -55,11 +57,12 @@ switch(process.env.npm_lifecycle_event) {
       ),
       parts.extractBundle({
         name: 'vendor',
-        entries: ['react'] // this needs to be managed manually - http://survivejs.com/webpack/building-with-webpack/splitting-bundles/#loading-dependencies-to-a-vendor-bundle-automatically
+        entries: ['react', 'react-dom'] // this needs to be managed manually - http://survivejs.com/webpack/building-with-webpack/splitting-bundles/#loading-dependencies-to-a-vendor-bundle-automatically
       }),
       parts.minify(),
       parts.extractCSS(PATHS.style),
       parts.purifyCSS([PATHS.app]),
+      parts.processJS(PATHS.app),
       {}
     );
     break;
@@ -71,6 +74,7 @@ switch(process.env.npm_lifecycle_event) {
         devtool: 'eval-source-map'
       },
       parts.setupCSS(PATHS.style),
+      parts.processJS(PATHS.app),
       parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT

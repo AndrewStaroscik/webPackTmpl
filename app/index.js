@@ -1,6 +1,10 @@
-var component = require('./components');
+//var component = require('./components');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var react = require('react');
-//require('./styles/main.css');
+import Cont from './components';
 
-document.body.appendChild(component());
+ReactDOM.render(
+  <Cont />,
+  document.getElementById('root')
+);

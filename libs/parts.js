@@ -149,3 +149,18 @@ exports.purifyCSS = function(paths) {
     ]
   }
 }
+
+exports.processJS = function(include) {
+  return {
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          // Enable caching for extra performance
+          loaders: ['babel'],
+          include: include
+        }
+      ]
+    }
+  };
+}
