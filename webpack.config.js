@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const validate = require('webpack-validator');
 
+const TARGET = process.env.npm_lifecycle_event;
+
 const parts = require('./libs/parts');
 
 const PATHS = {
@@ -11,6 +13,8 @@ const PATHS = {
   style: path.join(__dirname, 'app', './styles/main.css'),
   build: path.join(__dirname, 'build')
 };
+
+process.env.BABEL_ENV = TARGET;
 
 const common = {
   entry: {

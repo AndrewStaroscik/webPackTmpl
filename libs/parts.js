@@ -50,7 +50,7 @@ exports.setupCSS = function(paths) {
       loaders: [
         {
           test: /\.css$/,
-          loaders: ['style', 'css'],
+          loaders: ['style', 'css', 'stylus'],
           include: paths
         }
       ]
@@ -123,7 +123,7 @@ exports.extractCSS = function(paths) {
         // Extract CSS during build
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css!postcss-loader'),
+          loader: ExtractTextPlugin.extract('style', 'css!postcss-loader!stylus'),
           include: paths
         }
       ]

@@ -1,14 +1,14 @@
-body {
-  background: BurlyWood;
-}
+body 
+  background Goldenrod
 
-#container {
-  display: flex;
-  width: 500px;
-  justify-content: center;
+
+#container 
+  display flex
+  width 500px
+  justify-content center
   
-}
 
-.innerblock {
-  padding: 30px;
-}
+
+.innerblock 
+  padding 30px
+  border: 2px dashed red
