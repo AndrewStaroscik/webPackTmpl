@@ -41,7 +41,7 @@ switch(process.env.npm_lifecycle_event) {
         // below from: http://survivejs.com/webpack/building-with-webpack/adding-hashes-to-filenames/
         output: {
           path: PATHS.build,
-          publicPath: 'webpackTmpl', // tweak to 
+          //publicPath: '/webpackTmpl/',
           filename: '[name].[chunkhash].js',
           // this is used for the require.esusure. The setup
           // will work witout, but this is useful to set
